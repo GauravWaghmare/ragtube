@@ -1,0 +1,10 @@
+GET https://29envhunn2.execute-api.ap-southeast-1.amazonaws.com/api/
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-07-28T161235.200.json
+
+###
+
