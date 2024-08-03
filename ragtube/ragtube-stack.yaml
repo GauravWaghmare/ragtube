@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template to create an SQS queue and an S3 bucket'
+
+Resources:
+  IngestQueue:
+    Type: 'AWS::SQS::Queue'
+
+  VideoBucket:
+    Type: 'AWS::S3::Bucket'
+
+Outputs:
+  QueueURL:
+    Description: 'URL of the SQS Queue'
+    Value: !Ref IngestQueue
+  QueueARN:
+    Description: 'ARN of the SQS Queue'
+    Value: !GetAtt IngestQueue.Arn
+  BucketName:
+    Description: 'Name of the S3 Bucket'
+    Value: !Ref VideoBucket

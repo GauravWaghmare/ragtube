@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3f7f2ef-917b-42f9-999b-809d7e91dc35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ragtube-lambda.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ragtube/test_api.http" afterDir="false" />
+    <list default="true" id="d3f7f2ef-917b-42f9-999b-809d7e91dc35" name="Changes" comment="First commit">
+      <change afterPath="$PROJECT_DIR$/.idea/terraform.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/local.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/ragtube-stack.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/tests/test_helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragtube/tests/test_integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ragtube-lambda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ragtube-lambda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragtube/.chalice/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragtube/.chalice/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragtube/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragtube/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragtube/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ragtube/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragtube/test_api.http" beforeDir="false" afterPath="$PROJECT_DIR$/ragtube/tests/test_api.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,15 +31,28 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTTP Request" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GauravWaghmare&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:GauravWaghmare/ragtube.git&quot;,
+    &quot;accountId&quot;: &quot;0389ee36-7456-4075-be96-f3582df222d1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jrkqXVfTtHKOxxceNtdPXYk7A6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,7 +62,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.test_api | GET request to example server.executor": "Run",
+    "Makefile Target.check-stack.executor": "Run",
+    "Makefile Target.show-database.executor": "Run",
+    "Python tests.Python tests for ragtube.tests.test_integration.Test.test_handler.executor": "Run",
+    "Python tests.Python tests for ragtube.tests.test_integration.Test.test_index.executor": "Run",
+    "Python tests.Python tests for test_app.Test.executor": "Run",
+    "Python tests.Python tests for test_app.Test.test_embedding_sql.executor": "Run",
+    "Python tests.Python tests for test_app.Test.test_handler.executor": "Run",
+    "Python tests.Python tests for test_app.Test.test_index.executor": "Run",
+    "Python tests.Python tests for test_helper.Test.test_embedding_sql.executor": "Run",
+    "Python tests.Python tests for test_integration.Test.test_ask.executor": "Debug",
+    "Python tests.Python tests for test_integration.Test.test_handler.executor": "Run",
+    "Python.db.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -50,18 +85,212 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "SQLite",
       "TEXT"
     ]
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="test_api | GET request to example server" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ragtube/test_api.http" requestIdentifier="GET request to example server" runType="Run single request">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ragtube/tests" />
+      <recent name="$PROJECT_DIR$/ragtube" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_integration.Test.test_ask">
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragtube/db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for ragtube.tests.test_app.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;ragtube.tests.test_app.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for ragtube.tests.test_integration.Test.test_handler" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;ragtube.tests.test_integration.Test.test_handler&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_app.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_app.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_helper.Test.test_embedding_sql" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_helper.Test.test_embedding_sql&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_integration.Test.test_ask" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_integration.Test.test_ask&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_integration.Test.test_handler" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragtube/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_integration.Test.test_handler&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="ragtube-lambda" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/ragtube/local.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9 (ragtube-lambda)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.db" />
+      <item itemvalue="Python tests.Python tests for test_integration.Test.test_ask" />
+      <item itemvalue="Python tests.Python tests for ragtube.tests.test_integration.Test.test_handler" />
+      <item itemvalue="Python tests.Python tests for test_helper.Test.test_embedding_sql" />
+      <item itemvalue="Python tests.Python tests for test_integration.Test.test_handler" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.test_api | GET request to example server" />
+        <item itemvalue="Python tests.Python tests for test_integration.Test.test_ask" />
+        <item itemvalue="Python tests.Python tests for test_integration.Test.test_handler" />
+        <item itemvalue="Python.db" />
+        <item itemvalue="Python tests.Python tests for test_helper.Test.test_embedding_sql" />
+        <item itemvalue="Python tests.Python tests for ragtube.tests.test_integration.Test.test_handler" />
       </list>
     </recent_temporary>
   </component>
@@ -81,11 +310,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722152775006</updated>
-      <workItem from="1722152777631" duration="1916000" />
+      <workItem from="1722152777631" duration="11700000" />
+      <workItem from="1722265479841" duration="4351000" />
+      <workItem from="1722333980427" duration="2163000" />
+      <workItem from="1722343632147" duration="6761000" />
+      <workItem from="1722441686889" duration="3780000" />
+      <workItem from="1722589609275" duration="940000" />
+      <workItem from="1722676311772" duration="21657000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1722163434712</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722163434712</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ragtube/tests/test_integration.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ragtube/app.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ragtube_lambda$.coverage" NAME=" Coverage Results" MODIFIED="1722715450557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ragtube/tests" />
+    <SUITE FILE_PATH="coverage/ragtube_lambda$db.coverage" NAME="db Coverage Results" MODIFIED="1722709545054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ragtube" />
   </component>
 </project>

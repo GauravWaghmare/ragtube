@@ -3,7 +3,10 @@
   "app_name": "ragtube",
   "stages": {
     "dev": {
-      "api_gateway_stage": "api"
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "INGEST_VIDEO_QUEUE_URL": "your-dev-db-url"
+      }
     }
   }
 }

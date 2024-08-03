@@ -1,0 +1,9 @@
+pytube
+yt-dlp
+boto3~=1.34.149
+chalice~=1.31.2
+botocore~=1.34.149
+transformers~=4.43.3
+libsql-experimental
+replicate~=0.30.1
+pinecone-client[grpc]
