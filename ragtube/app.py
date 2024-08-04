@@ -3,7 +3,7 @@ import os
 
 import boto3
 from chalice import Chalice, Response
-import ragtube.helper as helper
+import helper
 
 app = Chalice(app_name='ragtube')
 sqs = boto3.client('sqs')
