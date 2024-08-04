@@ -12,7 +12,7 @@ from transformers import AutoTokenizer
 from pinecone.grpc import PineconeGRPC as Pinecone
 from ragtube.db import INDEX_NAME
 
-VIDEO_BUCKET = "***REMOVED***"
+VIDEO_BUCKET = os.environ['VIDEO_BUCKET']
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 
 app = Chalice(app_name='ragtube')

@@ -1,4 +1,4 @@
-build:
+deploy:
 	chalice deploy
 
 create-stack:

@@ -5,7 +5,11 @@
     "dev": {
       "api_gateway_stage": "api",
       "environment_variables": {
-        "INGEST_VIDEO_QUEUE_URL": "your-dev-db-url"
+        "REPLICATE_API_TOKEN":"***REMOVED***",
+        "PINECONE_API_KEY":"***REMOVED***",
+        "VIDEO_BUCKET":"***REMOVED***",
+        "SQS_QUEUE_URL":"***REMOVED***",
+        "SQS_QUEUE_ARN":"***REMOVED***"
       }
     }
   }

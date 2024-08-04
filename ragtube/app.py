@@ -1,4 +1,5 @@
 import json
+import os
 
 import boto3
 from chalice import Chalice, Response
@@ -6,6 +7,9 @@ import ragtube.helper as helper
 
 app = Chalice(app_name='ragtube')
 sqs = boto3.client('sqs')
+
+SQS_QUEUE_ARN = os.environ['SQS_QUEUE_ARN']
+SQS_QUEUE_URL = os.environ['SQS_QUEUE_URL']
 
 
 # TODO Add authentication to all http endpoints as described here https://aws.github.io/chalice/api.html#authorization
@@ -30,12 +34,9 @@ def ingest_video():
 
     message = request_body.get('url', url)
 
-    # Your SQS queue URL
-    queue_url = "***REMOVED***"
-
     # Send message to SQS queue
     response = sqs.send_message(
-        QueueUrl=queue_url,
+        QueueUrl=SQS_QUEUE_URL,
         MessageBody=message
     )
     return Response(body={'error': None},
@@ -43,7 +44,7 @@ def ingest_video():
                     headers={'Content-Type': 'application/json'})
 
 
-@app.on_sqs_message(queue_arn="***REMOVED***")
+@app.on_sqs_message(queue_arn=SQS_QUEUE_ARN)
 def handler(event):
     for record in event:
         video_url = json.loads(record.body)['url']
