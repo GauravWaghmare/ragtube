@@ -2,9 +2,16 @@
   "version": "2.0",
   "app_name": "ragtube",
   "automatic_layer": true,
+  "package": {
+    "include": [
+      "db.py",
+      "helper.py"
+    ]
+  },
   "stages": {
     "dev": {
       "api_gateway_stage": "api",
+      "app_s3_bucket": "***REMOVED***",
       "environment_variables": {
         "REPLICATE_API_TOKEN":"***REMOVED***",
         "PINECONE_API_KEY":"***REMOVED***",

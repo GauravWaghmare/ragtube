@@ -3,7 +3,7 @@ import os
 
 import boto3
 from chalice import Chalice, Response
-import helper
+from chalicelib import helper
 
 app = Chalice(app_name='ragtube')
 sqs = boto3.client('sqs')
@@ -73,4 +73,3 @@ def ask():
     chunks = [value['metadata']['chunk'] for value in values]
     answer = helper.fetch_answer(chunks, question)
     return Response(body=json.dumps({"answer": answer}), headers={'Content-Type': 'application/json'})
-

@@ -4,8 +4,13 @@ Description: 'CloudFormation template to create an SQS queue and an S3 bucket'
 Resources:
   IngestQueue:
     Type: 'AWS::SQS::Queue'
+    Properties:
+      VisibilityTimeout: 70
 
   VideoBucket:
+    Type: 'AWS::S3::Bucket'
+
+  ArtifactBucket:
     Type: 'AWS::S3::Bucket'
 
 Outputs:
@@ -15,6 +20,9 @@ Outputs:
   QueueARN:
     Description: 'ARN of the SQS Queue'
     Value: !GetAtt IngestQueue.Arn
-  BucketName:
+  VideoBucketName:
     Description: 'Name of the S3 Bucket'
     Value: !Ref VideoBucket
+  ArtifactBucketName:
+    Description: 'Name of the S3 Bucket'
+    Value: !Ref ArtifactBucket

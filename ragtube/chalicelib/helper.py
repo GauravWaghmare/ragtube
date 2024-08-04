@@ -10,7 +10,7 @@ from botocore.exceptions import ClientError
 from chalice import Chalice
 from transformers import AutoTokenizer
 from pinecone.grpc import PineconeGRPC as Pinecone
-from db import INDEX_NAME
+from .db import INDEX_NAME
 
 VIDEO_BUCKET = os.environ['VIDEO_BUCKET']
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
