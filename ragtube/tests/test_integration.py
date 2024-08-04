@@ -27,7 +27,7 @@ class Test(TestCase):
             result = client.http.post("/ask",
                                       headers={"Content-Type": "application/json"},
                                       body=json.dumps({"question": "Why should we rethink exercise?"}))
-            print(result.body)
+            print(result.json_body)
 
 
 if __name__ == '__main__':

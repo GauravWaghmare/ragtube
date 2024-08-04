@@ -150,3 +150,24 @@ def download_video_in_record(video_url):
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([video_url])
     return filepath
+
+
+def fetch_answer(chunks, question):
+    # The meta/meta-llama-3.1-405b-instruct model can stream output as it's running.
+    result = []
+    for event in replicate.stream(
+            "meta/meta-llama-3.1-405b-instruct",
+            input={
+                "top_k": 50,
+                "top_p": 0.9,
+                "prompt": question,
+                "max_tokens": 1024,
+                "min_tokens": 0,
+                "temperature": 0.6,
+                "system_prompt": f"Given the following context, {' '.join(chunks)}",
+                "presence_penalty": 0,
+                "frequency_penalty": 0
+            },
+    ):
+        result.append(str(event))
+    return ''.join(result)

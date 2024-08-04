@@ -70,5 +70,6 @@ def ask():
     results = helper.query_embeddings_from_db(embedding)
     values = helper.fetch_records_from_db(list(result['id'] for result in results))
     chunks = [value['metadata']['chunk'] for value in values]
-    return Response(body=json.dumps(chunks), headers={'Content-Type': 'application/json'})
+    answer = helper.fetch_answer(chunks, question)
+    return Response(body=json.dumps({"answer": answer}), headers={'Content-Type': 'application/json'})
 
