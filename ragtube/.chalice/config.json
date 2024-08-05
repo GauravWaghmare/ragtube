@@ -2,6 +2,7 @@
   "version": "2.0",
   "app_name": "ragtube",
   "automatic_layer": true,
+  "lambda_timeout": 300,
   "package": {
     "include": [
       "db.py",
@@ -10,14 +11,18 @@
   },
   "stages": {
     "dev": {
+      "autogen_policy": false,
       "api_gateway_stage": "api",
       "app_s3_bucket": "***REMOVED***",
+      "iam_role_arn": "***REMOVED***",
       "environment_variables": {
         "REPLICATE_API_TOKEN":"***REMOVED***",
         "PINECONE_API_KEY":"***REMOVED***",
         "VIDEO_BUCKET":"***REMOVED***",
         "SQS_QUEUE_URL":"***REMOVED***",
-        "SQS_QUEUE_ARN":"***REMOVED***"
+        "SQS_QUEUE_ARN":"***REMOVED***",
+        "TRANSFORMERS_CACHE": "/tmp/huggingface_cache",
+        "XDG_CACHE_HOME":"/tmp"
       }
     }
   }

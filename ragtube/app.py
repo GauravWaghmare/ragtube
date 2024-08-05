@@ -32,8 +32,7 @@ def ingest_video():
                         status_code=400,
                         headers={'Content-Type': 'application/json'})
 
-    message = request_body.get('url', url)
-
+    message = json.dumps({'url': url})
     # Send message to SQS queue
     response = sqs.send_message(
         QueueUrl=SQS_QUEUE_URL,

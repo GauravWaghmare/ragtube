@@ -141,8 +141,7 @@ def upload_audio_to_s3(filepath):
 
 
 def download_video_in_record(video_url):
-    filepath = f"./{uuid4()}.m4a"
-    # YouTube(url).streams.get_audio_only().download()
+    filepath = f"/tmp/{uuid4()}.m4a"
     ydl_opts = {
         'format': 'm4a/bestaudio/best',
         'outtmpl': filepath,

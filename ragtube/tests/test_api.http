@@ -1,1 +1,8 @@
+POST https://wh0cvszbe6.execute-api.ap-southeast-1.amazonaws.com/Stage/ingest-video
+Content-Type: application/json
+
+{"url": "https://www.youtube.com/watch?v=NqK3_n6pdDY"}
+
+###
 POST https://wh0cvszbe6.execute-api.ap-southeast-1.amazonaws.com/Stage/ping
+

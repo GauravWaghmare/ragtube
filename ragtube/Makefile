@@ -3,13 +3,13 @@ deploy: package
 	aws cloudformation deploy --template-file out/packaged-template.json --stack-name ragtube --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
 
 package:
-	chalice package out/
+	chalice package --stage dev out/
 
 create-stack:
-	aws cloudformation create-stack --stack-name ragtube-stack --template-body file://ragtube-stack.yaml
+	aws cloudformation create-stack --stack-name ragtube-stack --template-body file://ragtube-stack.yaml --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
 
 update-stack:
-	aws cloudformation update-stack --stack-name ragtube-stack --template-body file://ragtube-stack.yaml
+	aws cloudformation update-stack --stack-name ragtube-stack --template-body file://ragtube-stack.yaml --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
 
 delete-stack:
 	aws cloudformation delete-stack --stack-name ragtube-stack

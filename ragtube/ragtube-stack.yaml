@@ -13,6 +13,30 @@ Resources:
   ArtifactBucket:
     Type: 'AWS::S3::Bucket'
 
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: S3MultipartUploadPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:CreateMultipartUpload
+                  - s3:PutObject
+                  - s3:UploadPart
+                  - s3:CompleteMultipartUpload
+                  - s3:AbortMultipartUpload
+                Resource: !Sub 'arn:aws:s3:::${VideoBucket}/*'
+
 Outputs:
   QueueURL:
     Description: 'URL of the SQS Queue'
@@ -26,3 +50,6 @@ Outputs:
   ArtifactBucketName:
     Description: 'Name of the S3 Bucket'
     Value: !Ref ArtifactBucket
+  LambdaExecutionRoleARN:
+    Description: 'ARN of the Lambda Execution IAM Role'
+    Value: !GetAtt LambdaExecutionRole.Arn
