@@ -6,6 +6,14 @@ Resources:
     Type: 'AWS::SQS::Queue'
     Properties:
       VisibilityTimeout: 70
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt IngestDeadLetterQueue.Arn
+        maxReceiveCount: 5
+
+  IngestDeadLetterQueue:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      MessageRetentionPeriod: 1209600
 
   VideoBucket:
     Type: 'AWS::S3::Bucket'
@@ -37,6 +45,66 @@ Resources:
                   - s3:AbortMultipartUpload
                 Resource: !Sub 'arn:aws:s3:::${VideoBucket}/*'
 
+  CognitoUserPool:
+    Type: "AWS::Cognito::UserPool"
+    Properties:
+      UserPoolName: "VideolexUserPool"
+      AutoVerifiedAttributes:
+        - "email"
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+      Schema:
+        - Name: "email"
+          AttributeDataType: "String"
+          Mutable: true
+          Required: true
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: "verified_email"
+            Priority: 1
+      EmailVerificationMessage: "Your verification code is {####}"
+      EmailVerificationSubject: "Your verification code"
+
+  CognitoUserPoolClient:
+    Type: "AWS::Cognito::UserPoolClient"
+    Properties:
+      ClientName: "VideolexUserPoolClient"
+      UserPoolId: !Ref CognitoUserPool
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - "ALLOW_USER_PASSWORD_AUTH"
+        - "ALLOW_REFRESH_TOKEN_AUTH"
+      SupportedIdentityProviders:
+        - COGNITO
+        - Google
+      CallbackURLs:
+        - "http://localhost:3000/"
+      LogoutURLs:
+        - "http://localhost:3000/"
+      AllowedOAuthFlows:
+        - "code"
+      AllowedOAuthScopes:
+        - "email"
+        - "openid"
+        - "profile"
+      AllowedOAuthFlowsUserPoolClient: true
+
+  CognitoIdentityProviderGoogle:
+    Type: "AWS::Cognito::UserPoolIdentityProvider"
+    Properties:
+      ProviderName: "Google"
+      ProviderType: "Google"
+      UserPoolId: !Ref CognitoUserPool
+      ProviderDetails:
+        client_id: "657575076082-d0p9ep35b5pdhtca49bquergcfpjfqoh.apps.googleusercontent.com"
+        client_secret: "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"
+        authorize_scopes: "openid email profile"
+
 Outputs:
   QueueURL:
     Description: 'URL of the SQS Queue'
@@ -53,3 +121,16 @@ Outputs:
   LambdaExecutionRoleARN:
     Description: 'ARN of the Lambda Execution IAM Role'
     Value: !GetAtt LambdaExecutionRole.Arn
+  DeadLetterQueueURL:
+    Description: 'URL of the Dead Letter Queue'
+    Value: !Ref IngestDeadLetterQueue
+  UserPoolId:
+    Description: "The ID of the Cognito User Pool"
+    Value: !Ref CognitoUserPool
+    Export:
+      Name: "CognitoUserPoolId"
+  UserPoolClientId:
+    Description: "The Client ID of the Cognito User Pool Client"
+    Value: !Ref CognitoUserPoolClient
+    Export:
+      Name: "CognitoUserPoolClientId"

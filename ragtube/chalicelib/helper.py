@@ -145,6 +145,8 @@ def download_video_in_record(video_url):
     ydl_opts = {
         'format': 'm4a/bestaudio/best',
         'outtmpl': filepath,
+        'quiet': True,
+        'no_warnings': True,
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([video_url])
