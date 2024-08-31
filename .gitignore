@@ -1,0 +1,3 @@
+ragtube/.chalice/deployments/
+ragtube/.chalice/venv/
+ragtube/local.env

@@ -11,8 +11,8 @@
         "s3:ListBucketMultipartUploads"
       ],
       "Resource": [
-        "arn:aws:s3:::***REMOVED***/*",
-        "arn:aws:s3:::***REMOVED***"
+        "arn:aws:s3:::ragtube-stack-videobucket-apewptydmbbr/*",
+        "arn:aws:s3:::ragtube-stack-videobucket-apewptydmbbr"
       ]
     },
     {

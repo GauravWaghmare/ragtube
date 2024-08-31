@@ -13,14 +13,14 @@
     "dev": {
       "autogen_policy": false,
       "api_gateway_stage": "api",
-      "app_s3_bucket": "***REMOVED***",
-      "iam_role_arn": "***REMOVED***",
+      "app_s3_bucket": "ragtube-stack-artifactbucket-pkb6vjtvuumg",
+      "iam_role_arn": "arn:aws:iam::010526243263:role/ragtube-stack-LambdaExecutionRole-HjufpW9inBqj",
       "environment_variables": {
-        "REPLICATE_API_TOKEN":"***REMOVED***",
-        "PINECONE_API_KEY":"***REMOVED***",
-        "VIDEO_BUCKET":"***REMOVED***",
-        "SQS_QUEUE_URL":"***REMOVED***",
-        "SQS_QUEUE_ARN":"***REMOVED***",
+        "REPLICATE_API_TOKEN":"r8_QCMsJ4CKvDyn8ttoX2wzp80g0VBk2cO1zl2ff",
+        "PINECONE_API_KEY":"0e5acf2a-d0d7-4780-ad50-ed3be746d8dc",
+        "VIDEO_BUCKET":"ragtube-stack-videobucket-apewptydmbbr",
+        "SQS_QUEUE_URL":"https://sqs.ap-southeast-1.amazonaws.com/010526243263/ragtube-stack-IngestQueue-LBlkzC9vsyIM",
+        "SQS_QUEUE_ARN":"arn:aws:sqs:ap-southeast-1:010526243263:ragtube-stack-IngestQueue-LBlkzC9vsyIM",
         "TRANSFORMERS_CACHE": "/tmp/huggingface_cache",
         "XDG_CACHE_HOME":"/tmp"
       }

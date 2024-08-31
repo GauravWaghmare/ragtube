@@ -1,5 +1,5 @@
 deploy: package
-	aws cloudformation package --template-file out/sam.json --s3-bucket ***REMOVED*** --output-template-file out/packaged-template.json
+	aws cloudformation package --template-file out/sam.json --s3-bucket ragtube-stack-artifactbucket-pkb6vjtvuumg --output-template-file out/packaged-template.json
 	aws cloudformation deploy --template-file out/packaged-template.json --stack-name ragtube --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
 
 package:
