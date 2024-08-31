@@ -1,12 +1,40 @@
 POST https://wh0cvszbe6.execute-api.ap-southeast-1.amazonaws.com/Stage/ingest-video
 Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+Content-Length: 54
+
+{"url": "https://www.youtube.com/watch?v=9GumiLIxLMM"}
+
+<> 2024-08-17T184828.201.json
+
+###
+
+POST https://wh0cvszbe6.execute-api.ap-southeast-1.amazonaws.com/Stage/ask
+Content-Type: application/json
+Content-Length: 100
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{"question": "Why does the weight of the world rests squarely on the shoulders of Ben & Jerry’s?"}
+
+<> 2024-08-05T161937.200.json
+
+###
+
+POST https://wh0cvszbe6.execute-api.ap-southeast-1.amazonaws.com/Stage/ingest-video
+Content-Type: application/json
 Content-Length: 54
 User-Agent: IntelliJ HTTP Client/PyCharm 2024.1.4
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 x-http2-scheme: https
 
-{"url": "https://www.youtube.com/watch?v=NqK3_n6pdDY"}
+{"url": "https://www.youtube.com/watch?v=9GumiLIxLMM"}
 
 <> 2024-08-05T145139.201.json
 

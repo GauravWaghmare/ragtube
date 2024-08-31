@@ -24,11 +24,28 @@ Ragtube is an intelligent video processing and question-answering system that le
 
 To use Ragtube, you'll need to set up the necessary environment and dependencies. Here's a basic guide:
 
-1. Install the required packages (exact requirements to be specified in a `requirements.txt` file).
-2. Set up your AWS credentials for S3 access.
-3. Ensure you have the necessary API keys for the AI models used (Replicate API key).
+## Setup
 
-4. Run the application using the following make commands:
+1. Create the infrastructure first by running:
+   ```
+   make create-stack
+   ```
+
+2. Set the following environment variables in a `local.env` file in the project root:
+
+   ```
+   REPLICATE_API_TOKEN=your_replicate_api_token
+   PINECONE_API_KEY=your_pinecone_api_key
+   VIDEO_BUCKET=your_s3_bucket_name
+   SQS_QUEUE_URL=your_sqs_queue_url
+   SQS_QUEUE_ARN=your_sqs_queue_arn
+   ```
+
+   Replace the placeholder values with your actual credentials and resources.
+3. Install the required packages (exact requirements to be specified in a `requirements.txt` file).
+4. Set up your AWS credentials for S3 access.
+5. Ensure you have the necessary API keys for the AI models used (Replicate API key).
+6. Run the application using the following make commands:
 
    - To start the development server:
      ```
